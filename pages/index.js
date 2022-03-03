@@ -38,6 +38,8 @@ export default function Home(props) {
                       src="/right-arrow.svg"
                       alt="Right arrow"
                       className={smallArrow}
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </div>
@@ -52,7 +54,7 @@ export default function Home(props) {
           /* to create the first post */
           <button className={buttonStyle} onClick={navigate}>
             Create your first post
-            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} />
+            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} width={35} height={35} />
           </button>
         )}
       </div>
