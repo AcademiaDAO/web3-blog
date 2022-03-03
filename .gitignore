@@ -18,7 +18,7 @@
 # misc
 .DS_Store
 *.pem
-conifg.js
+config.js
 
 # debug
 npm-debug.log*
