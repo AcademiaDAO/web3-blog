@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { useState } from 'react'
-import { Link, Img } from 'next/*'
+import Link from 'next/link'
+import Image from 'next/Image'
 import { css } from '@emotion/css'
 import { ethers } from 'ethers'
 import Web3Modal from 'web3modal'
@@ -43,14 +44,15 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <div>
-      <nav className={nave}>
+      <nav className={nav}>
         <div className={header}>
           <Link href="/">
             <a>
-              <Img
+              <Image
                 src='/logo.svg'
                 alt="React Logo"
-                style={{ width: '50px' }}
+                width='50px'
+                height='50px'
               />
             </a>
           </Link>

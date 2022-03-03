@@ -26,7 +26,7 @@ async function main() {
   /* file named config.js that we can use in the app */
   fs.writeFileSync('./config.js', `
   export const contractAddress = "${blog.address}"
-  export const wonerAddress = "${blog.signer.address}"
+  export const ownerAddress = "${blog.signer.address}"
   `)
 }
 
