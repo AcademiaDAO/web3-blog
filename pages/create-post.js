@@ -6,11 +6,14 @@ import { ethers } from "ethers";
 import { create } from "ipfs-http-client";
 import { NFTStorage } from 'nft.storage'
 
+
 /* import contract address and contract owner address */
 import { contractAddress } from "../config";
 
 import Blog from "../artifacts/contracts/Blog.sol/Blog.json";
-const nftStorageClient = new NFTStorage({ token: '' })
+
+const NFT_STORAGE_API = process.env.NFT_STORAGE_API;
+const nftStorageClient = new NFTStorage({ token: NFT_STORAGE_API })
 
 /* define the ipfs endpoint */
 const client = create("https://ipfs.infura.io:5001/api/v0");
