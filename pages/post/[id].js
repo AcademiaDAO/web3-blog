@@ -59,7 +59,7 @@ export default function Post({ post }) {
               </div>
             )
           }
-          <button onClick={() => mintToken()}>Mint</button>
+          { post.metadataURI ? <button onClick={() => mintToken()}>Mint</button> : <p>NFT Unavailable</p> }
           {
             /* if the post has a cover image, render it */
             post.coverImage && (
