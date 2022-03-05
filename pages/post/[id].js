@@ -18,7 +18,10 @@ export default function Post({ post }) {
   const router = useRouter();
   const { id } = router.query;
 
-  const metadataURI = post.metadataURI.replace(/^ipfs:\/\//, "");
+  let metadataURI
+  if (post.metadataURI) {
+    metadataURI = post.metadataURI.replace(/^ipfs:\/\//, "");
+  }
 
   const mintToken = async () => {
     try {
@@ -37,7 +40,7 @@ export default function Post({ post }) {
       console.log(error)
     }
   }
-  
+
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
