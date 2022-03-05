@@ -12,8 +12,7 @@ import { contractAddress } from "../config";
 
 import Blog from "../artifacts/contracts/Blog.sol/Blog.json";
 
-const NFT_STORAGE_API = process.env.NFT_STORAGE_API;
-const nftStorageClient = new NFTStorage({ token: NFT_STORAGE_API })
+const nftStorageClient = new NFTStorage({ token: process.env.NEXT_PUBLIC_API })
 
 /* define the ipfs endpoint */
 const client = create("https://ipfs.infura.io:5001/api/v0");
