@@ -4,11 +4,13 @@ import dynamic from "next/dynamic";
 import { css } from "@emotion/css";
 import { ethers } from "ethers";
 import { create } from "ipfs-http-client";
+import { NFTStorage } from 'nft.storage'
 
 /* import contract address and contract owner address */
 import { contractAddress } from "../config";
 
 import Blog from "../artifacts/contracts/Blog.sol/Blog.json";
+const nftStorageClient = new NFTStorage({ token: '' })
 
 /* define the ipfs endpoint */
 const client = create("https://ipfs.infura.io:5001/api/v0");
@@ -87,7 +89,12 @@ function CreatePost() {
     const uploadedFile = e.target.files[0];
     if (!uploadedFile) return;
     const added = await client.add(uploadedFile);
-    setPost((state) => ({ ...state, coverImage: added.path }));
+    const metadata = await nftStorageClient.store({
+      name: title,
+      description: content,
+      image: uploadedFile
+    })
+    setPost(state => ({ ...state, coverImage: added.path, metadataURI: metadata.url }))
     setImage(uploadedFile);
   }
 
