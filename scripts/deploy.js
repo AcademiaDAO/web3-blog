@@ -22,11 +22,18 @@ async function main() {
 
   console.log("Blog deployed to:", blog.address);
 
+  //Deploy NFTMinter.sol contract
+  const NFTMinter = await hre.ethers.getContractFactory("NFTMinter");
+  const nftminter = await NFTMinter.deploy();
+  await nftminter.deployed();
+  console.log("NFTMinter deployed to:", nftminter.address);
+
   /* this code writes the contract addresses to a local */
   /* file named config.js that we can use in the app */
   fs.writeFileSync('./config.js', `
   export const contractAddress = "${blog.address}"
   export const ownerAddress = "${blog.signer.address}"
+  export const nftContractAddress = "${nftminter.address}"
   `)
 }
 
