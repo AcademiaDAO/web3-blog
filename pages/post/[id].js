@@ -19,7 +19,7 @@ export default function Post({ post }) {
   const { id } = router.query;
 
   let metadataURI
-  if (post.metadataURI) {
+  if (post) {
     metadataURI = post.metadataURI.replace(/^ipfs:\/\//, "");
   }
 
