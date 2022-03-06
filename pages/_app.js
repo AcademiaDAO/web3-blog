@@ -82,7 +82,7 @@ function MyApp({ Component, pageProps }) {
             </a>
           </Link>
           {
-            (account == ownerAddress) && (
+            (account) && (
               <Link href="create-post">
                 <a className={link}>
                   Create Post
