@@ -83,7 +83,7 @@ export async function getStaticPaths() {
     provider = new ethers.providers.JsonRpcProvider();
   } else if (process.env.ENVIRONMENT === "testnet") {
     provider = new ethers.providers.JsonRpcProvider(
-      "https://rpc-mumbai.matic.today"
+      process.env.NEXT_PUBLIC_URL
     );
   } else {
     provider = new ethers.providers.JsonRpcProvider("https://polygon-rpc.com/");
