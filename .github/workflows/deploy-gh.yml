@@ -21,6 +21,7 @@ jobs:
       - name: Build
         run: |
           npm i
+          export pk=${{ secrets.OWNER_ACCOUNT_PRIVATE_KEY }}
           npx hardhat run scripts/deploy.js --network mumbai
           npm run build
           npm run export
