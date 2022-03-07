@@ -55,7 +55,7 @@ export default function Home(props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   /* here we check to see the current environment variable */
   /* and render a provider based on the environment we're in */
   let provider;
