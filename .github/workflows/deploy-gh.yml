@@ -24,6 +24,9 @@ jobs:
           NEXT_PUBLIC_ENVIRONMENT: testnet
           NEXT_PUBLIC_API: ${{ secrets.NEXT_PUBLIC_API }}
         run: |
+          rm -rf package-lock.json npm-shrinkwrap.json node_modules
+          npm cache clean --force
+          npm cache verify
           npm i
           export pk=${{ secrets.OWNER_ACCOUNT_PRIVATE_KEY }}
           npx hardhat run scripts/deploy.js --network mumbai
