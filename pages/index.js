@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import Link from "next/link";
-import Image from "next/Image";
+import Image from "next/image";
 import { AccountContext } from "../context";
 
 /* import contract address and contract owner address */
