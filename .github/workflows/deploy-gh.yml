@@ -6,7 +6,7 @@ name: Deploy on Github pages
 on:
   push:
     branches:
-      - action-test
+      - develop
 
 jobs:
   build:
