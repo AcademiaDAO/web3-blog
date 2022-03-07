@@ -34,13 +34,7 @@ export default function Home(props) {
                 <div className={linkStyle}>
                   <p className={postTitle}>{post[1]}</p>
                   <div className={arrowContainer}>
-                    <Image
-                      src="/right-arrow.svg"
-                      alt="Right arrow"
-                      className={smallArrow}
-                      width={25}
-                      height={25}
-                    />
+                    <img src='/right-arrow.svg' alt="Right arrow" className={smallArrow}/>
                   </div>
                 </div>
               </a>
