@@ -19,6 +19,10 @@ jobs:
         with:
           node-version: 16
       - name: Build
+        env:
+          ENVIRONMENT: testnet
+          NEXT_PUBLIC_ENVIRONMENT: testnet
+          NEXT_PUBLIC_API: ${{ secrets.NEXT_PUBLIC_API }}
         run: |
           npm i
           export pk=${{ secrets.OWNER_ACCOUNT_PRIVATE_KEY }}
