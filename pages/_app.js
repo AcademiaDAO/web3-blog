@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/Image'
+import Image from 'next/image'
 import { css } from '@emotion/css'
 import { ethers } from 'ethers'
 import Web3Modal from 'web3modal'
