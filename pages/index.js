@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import Link from "next/link";
-import Image from "next/image";
 import { AccountContext } from "../context";
 
 /* import contract address and contract owner address */
@@ -48,7 +47,7 @@ export default function Home(props) {
           /* to create the first post */
           <button className={buttonStyle} onClick={navigate}>
             Create your first post
-            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} width={35} height={35} />
+            <img src="/right-arrow.svg" alt="Right arrow" className={arrow} />
           </button>
         )}
       </div>
